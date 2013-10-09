@@ -2,7 +2,7 @@
 body {}
 
 body * {
-	text-shadow:0 1px 1px rgba(0,0,0,0.2);
+	text-shadow: 0 1px 1px rgba(0,0,0,0.2);
 }
 
 /* Colors: 
@@ -97,7 +97,7 @@ body .color_7 {
 	transition: all .1s ease-in-out;
 }
 
-#bracket #week-9 .header, #bracket #week-9 .match {border-right: 1px solid #cbcbcb;}
+#bracket #week-7 .header, #bracket #week-7 .match {border-right: 1px solid #cbcbcb;}
 
 #bracket .match:after {
 	background: url(http://na.lolesports.com/profiles/wpp_pro_profile/themes/custom/hotshot/images/head-to-head-icons-sc45de18b35.png) 0 -403px;
