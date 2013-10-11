@@ -3,58 +3,67 @@
 <head>
 	<meta charset=utf-8 />
 	<title>App State LCS Generator</title>
-	<meta name="description" content="App State LCS Generator - v1.8.1b" />
+	<meta name="description" content="App State LCS Generator - v1.9a" />
 	
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
 	
 	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.3.0/pure-min.css">
 	<link rel="stylesheet" href="css.css">
 </head>
+
 <body>
-	
-	<section id='bracket' class='clearafter'>	
-		<div id='week-1' class='week'>
+<div class='pure-g-r'>
+
+	<aside id="menu" class="pure-u closed">
+		<a href='#' id='open-close'></a>
+
+		<section id='wrapper' class="pure-menu">
+			<ul id='highlighters'>
+				<li class="pure-menu-heading">Highlight Team:</li>
+				<li><a href='#' id='0' class='color_0'>Orbital War Brigade</a></li>
+				<li><a href='#' id='1' class='color_1'>Mom Told Me to Pause</a></li>
+				<li><a href='#' id='2' class='color_2'>Naming is Harder</a></li>
+				<li><a href='#' id='3' class='color_3'>Tears Fully Stacked</a></li>
+				<li><a href='#' id='4' class='color_4'>Cereal Killers</a></li>
+				<li><a href='#' id='5' class='color_5'>Poptarts and Koreans</a></li>
+				<li><a href='#' id='6' class='color_6'>Mayonnaise Wagon</a></li>
+				<li><a href='#' id='7' class='color_7'>The Donger Squad</a></li>
+			</ul>
+		</section>
+	</aside>
+
+	<section id='bracket' class='pure-u'>    
+		<div id='week-1' class='week hide'>
 			<div class='header'>Week 1</div>
 		</div>
-		<div id='week-2' class='week'>
+		<div id='week-2' class='week current-week'>
 			<div class='header'>Week 2</div>
 		</div>
-		<div id='week-3' class='week'>
+		<div id='week-3' class='week hide'>
 			<div class='header'>Week 3</div>
 		</div>
-		<div id='week-4' class='week'>
+		<div id='week-4' class='week hide'>
 			<div class='header'>Week 4</div>
 		</div>
-		<div id='week-5' class='week'>
+		<div id='week-5' class='week hide'>
 			<div class='header'>Week 5</div>
 		</div>
-		<div id='week-6' class='week'>
+		<div id='week-6' class='week hide'>
 			<div class='header'>Week 6</div>
 		</div>
-		<div id='week-7' class='week'>
+		<div id='week-7' class='week hide'>
 			<div class='header'>Week 7</div>
 		</div>
-		<!-- <div id='week-8' class='week'>
+		<div id='week-8' class='week hide'>
 			<div class='header'>Week 8</div>
 		</div>
-		<div id='week-9' class='week'>
+		<div id='week-9' class='week hide'>
 			<div class='header'>Week 9</div>
-		</div> -->
+		</div>
 	</section>
-	
-	<div id="highlighters">
-		<h3>Highlight Team: </h3>
-		<a href='#' id='0' class='pure-button color_0'>Orbital War Brigade</a>
-		<a href='#' id='1' class='pure-button color_1'>Mom Told Me to Pause</a>
-		<a href='#' id='2' class='pure-button color_2'>Naming is Harder</a>
-		<a href='#' id='3' class='pure-button color_3'>Tears Fully Stacked</a>
-		<a href='#' id='4' class='pure-button color_4'>Cereal Killers</a>
-		<a href='#' id='5' class='pure-button color_5'>Poptarts and Koreans</a>
-		<a href='#' id='6' class='pure-button color_6'>Mayonnaise Wagon</a>
-		<a href='#' id='7' class='pure-button color_7'>The Donger Squad</a>
-	</div>
-	
-<script src="js.js"></script>
 
+</div>
+
+<script src='js.js'></script>
 </body>
 </html>

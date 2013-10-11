@@ -1,87 +1,139 @@
 
-body {}
+body {min-height: 100%;}
 
 body * {
-	text-shadow: 0 1px 1px rgba(0,0,0,0.2);
+	text-shadow:0 1px 1px rgba(0,0,0,0.2);
 }
 
 /* Colors: 
-	 #1a1334	#26294a	#01545a	#017351	#03c383	#aad962	
-	 #fbbf45	#ef6a32 	#ed0345	#a12a5e	#710162	#110141 */
+#1a1334    #26294a    #01545a    #017351    #03c383    #aad962    
+#fbbf45    #ef6a32    #ed0345    #a12a5e    #710162    #110141 */
 
 body .color_0 {
 	background-color: #ed0345 !important;
-	color: #eee;
+	color: #eee !important;
 }
 
 body .color_1 {
 	background-color: #fbbf45 !important;
+	color: #333 !important;
 }
 
 body .color_2 {
 	background-color: #aad962 !important;
+	color: #333 !important;
 }
 
 body .color_3 {
 	background-color: #01545a !important;
-	color: #eee;
+	color: #eee !important;
 }
 
 body .color_4 {
 	background-color: #26294a !important;
-	color:#eee;
+	color: #eee !important;
 }
 
 body .color_5 {
 	background-color: #017351 !important;
-	color: #eee;
+	color: #eee !important;
 }
 
 body .color_6 {
 	background-color: #ed7282 !important;
-	color:#eee;
+	color: #eee !important;
 }
 
 body .color_7 {
 	background-color: #710162 !important;
-	color: #eee;
+	color: #eee !important;
 }
 
-
-.pure-button-active, body .color_0 .team_0, body .color_1 .team_1, body .color_2 .team_2, body .color_3 .team_3, body .color_4 .team_4, body .color_5 .team_5, body .color_6 .team_6, body .color_7 .team_7 {
+.pure-menu-selected, body .color_0 .team_0, body .color_1 .team_1, body .color_2 .team_2, body .color_3 .team_3, body .color_4 .team_4, body .color_5 .team_5, body .color_6 .team_6, body .color_7 .team_7 {
 	font-style: italic;
 	font-weight: 700;
 	text-decoration: underline;
 }
 
-.clearafter:after {
-	clear: both;
-	content: "";
-	display: block;
-	height: 0;
-	visibility: hidden;
+#menu {
+	background: #191818;
 }
 
-.clearafter {
-	zoom:1;
+#open-close {
+	height: 30px;
+	position: relative;
+	padding-left: 1.25em;
+	font-size: 1.5em;
+	float: right;
+	margin: 7px;
+	-webkit-transition: all .1s ease-in-out;
+	transition: all .1s ease-in-out;
+}
+
+#open-close:before {
+	content: "";
+	position: absolute;
+	top: 0.25em;
+	left: 0;
+	width: 1em;
+	height: 0.125em;
+	border-top: 0.375em double #eee;
+	border-bottom: 0.125em solid #eee;
+}
+
+#open-close:hover {
+	-ms-transform: rotate(90deg);
+	-webkit-transform: rotate(90deg);
+	transform: rotate(90deg);
+}
+
+#menu.closed {
+	width: 45px; 
+}
+
+#menu.opened #open-close {
+	top: 0.125em;
+	-ms-transform: rotate(90deg);
+	-webkit-transform: rotate(90deg);
+	transform: rotate(90deg);
+}
+
+#menu.opened #open-close:hover {
+	-ms-transform: rotate(0deg);
+	-webkit-transform: rotate(0deg);
+	transform: rotate(0deg);
+}
+
+#menu #wrapper {border: none; clear: both;}
+
+#menu .pure-menu-heading {
+	background: #555; 
+	border-color: #bbb; 
+	color: #eee; 
+	padding: 12px 20px;
 }
 
 #bracket {text-align: center; margin: 0 auto;}
 
+#bracket * {
+	-webkit-transition: all .1s ease-in-out;
+	transition: all .1s ease-in-out;
+}
+
 #bracket .week {
 	display: block;
-	float: left;
 	position: relative;
 	width: 350px;
-	border-bottom: 1px solid #cbcbcb;
+	border: 1px solid #cbcbcb;
 }
+
+#bracket .hide {display: none;}
 
 #bracket .header {
 	background: #e0e0e0;
 	color: #000;
 	line-height: 2em;
 	width: 350px;
-	border-left: 1px solid #cbcbcb;
 	border-bottom: 1px solid #cbcbcb;
 }
 
@@ -90,14 +142,11 @@ body .color_7 {
 	height: 80px;
 	width: 100%;
 	margin: auto auto;
-	position: relative;
-	border-left: 1px solid #cbcbcb; 
+	position: relative; 
 	border-bottom: 1px solid #cbcbcb;
-	-webkit-transition: all .1s ease-in-out;
-	transition: all .1s ease-in-out;
 }
 
-#bracket #week-7 .header, #bracket #week-7 .match {border-right: 1px solid #cbcbcb;}
+#bracket #week-9 .header, #bracket #week-9 .match {border-right: 1px solid #cbcbcb;}
 
 #bracket .match:after {
 	background: url(http://na.lolesports.com/profiles/wpp_pro_profile/themes/custom/hotshot/images/head-to-head-icons-sc45de18b35.png) 0 -403px;
@@ -112,6 +161,10 @@ body .color_7 {
 
 #bracket .match:nth-child(2n-1) {
 	background-color: #f2f2f2;
+}
+
+#bracket .match:last-child {
+	border-bottom: none;
 }
 
 #bracket .team {
@@ -129,22 +182,3 @@ body .color_7 {
 #bracket .winner.left {background-image: radial-gradient(90% 90% at center right, hsla(47, 94%, 50%, 0.4) 0%,hsla(47, 94%, 50%, 0) 100%); border-right: 1px solid #c49246;}
 #bracket .winner.right {background-image: radial-gradient(90% 90% at center left, hsla(47, 94%, 50%, 0.4) 0%,hsla(47, 94%, 50%, 0) 100%); border-left: 1px solid #c49246;}
 #bracket .winner + .right {border-left: none;}
-
-#highlighters {
-	padding: 12px 50px 0;
-	text-align: justify;
-}
-
-#highlighters a {
-	display:inline-block;
-}
-
-#highlighters a.pure-button-active {
-	font-weight: 700;
-}
-
-#highlighters:after {
-	content: '';
-	display: inline-block;
-	width: 100%;
-}
