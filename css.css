@@ -2,7 +2,11 @@
 body {min-height: 100%;}
 
 body * {
-	text-shadow:0 1px 1px rgba(0,0,0,0.2);
+	text-shadow: 0 1px 1px rgba(0,0,0,0.2);
+}
+
+body .pure-g-r {
+	justify-content: space-between;
 }
 
 /* Colors: 
@@ -55,6 +59,12 @@ body .color_7 {
 	text-decoration: underline;
 }
 
+
+#open-close, #bracket *, #standings * {
+	-webkit-transition: all .1s ease-in-out;
+	transition: all .1s ease-in-out;
+}
+
 #menu {
 	background: #191818;
 }
@@ -66,8 +76,6 @@ body .color_7 {
 	font-size: 1.5em;
 	float: right;
 	margin: 7px;
-	-webkit-transition: all .1s ease-in-out;
-	transition: all .1s ease-in-out;
 }
 
 #open-close:before {
@@ -113,18 +121,24 @@ body .color_7 {
 	padding: 12px 20px;
 }
 
-#bracket {text-align: center; margin: 0 auto;}
-
-#bracket * {
-	-webkit-transition: all .1s ease-in-out;
-	transition: all .1s ease-in-out;
+#bracket {
+	text-align: center; 
+	margin-top: 20px;
 }
+
+.verticle-center-wrapper { 
+	display: table-cell; 
+	vertical-align: middle;
+}
+
+#bracket h3 {text-align: center;}
 
 #bracket .week {
 	display: block;
 	position: relative;
 	width: 350px;
 	border: 1px solid #cbcbcb;
+	margin: 0 auto;
 }
 
 #bracket .hide {display: none;}
@@ -133,6 +147,7 @@ body .color_7 {
 	background: #e0e0e0;
 	color: #000;
 	line-height: 2em;
+	font-weight: 700;
 	width: 350px;
 	border-bottom: 1px solid #cbcbcb;
 }
@@ -179,6 +194,16 @@ body .color_7 {
 
 #bracket .right {border-left: 1px solid rgb(196,146,70);}
 
-#bracket .winner.left {background-image: radial-gradient(90% 90% at center right, hsla(47, 94%, 50%, 0.4) 0%,hsla(47, 94%, 50%, 0) 100%); border-right: 1px solid #c49246;}
-#bracket .winner.right {background-image: radial-gradient(90% 90% at center left, hsla(47, 94%, 50%, 0.4) 0%,hsla(47, 94%, 50%, 0) 100%); border-left: 1px solid #c49246;}
+#bracket .winner.left {
+	background-image: radial-gradient(90% 90% at center right, hsla(47, 94%, 50%, 0.4) 0%,hsla(47, 94%, 50%, 0) 100%); 
+	border-right: 1px solid #c49246;
+}
+#bracket .winner.right {
+	background-image: radial-gradient(90% 90% at center left, hsla(47, 94%, 50%, 0.4) 0%,hsla(47, 94%, 50%, 0) 100%); 
+	border-left: 1px solid #c49246;
+}
 #bracket .winner + .right {border-left: none;}
+
+#standings {}
+
+#standings table {margin: 75px 20px;}
