@@ -11,7 +11,8 @@ weeks = JSON.parse("["+
 					"]");
 
 results = JSON.parse("["+
-						"[[1,0],[1,0],[1,0],[1,0],[1,0],[0,1],[0,1],[1,0]]"+
+						"[[1,0],[1,0],[1,0],[1,0],[1,0],[0,1],[0,1],[1,0]],"+
+                    	"[[1,0],[1,0],[1,0],[1,0],[0,1],[0,1],[1,0],[1,0]]"+
 					"]");
 
 /**
@@ -120,8 +121,8 @@ function build_schedule(weeks){
 			var winners = ['',''];
 
 			if(i < results.length) {
-				if(results[i][k][0] === 1) winners = [' winner',' loser'];
-				else winners = [' loser',' winner'];
+				if( results[i][k][0] === 1 ) winners = [' winner',' loser'];
+        		else if( results[i][k][0] === 0 ) winners = [' loser',' winner'];
 			}
 
 			$('#week-'+(i+1)).append('<div class="match">'+
