@@ -1,19 +1,19 @@
-var possibles = [], weeks = [], results = [], teams = ["Orbital War Brigade", "Mom Told Me to Pause", "Naming is Harder than Gaming", "Tears Fully Stacked", "Cereal Killers", "Poptarts and Koreans", "Mayonnaise Wagon", "The Donger Squad"];
+var possibles = [], weeks = [], results = [], teams = ["Orbital War Brigade", "Mom Told Me to Pause", "Naming is Harder than Gaming", "Tears Fully Stacked", "Cereal Killers", "Poptarts and Koreans", "Mayonnaise Wagon", "The Donger Squad"], uri = parseURL(location.href), current_week = 3; console.log(uri.params);
 
 weeks = JSON.parse("["+
-						"[[6,0],[7,4],[0,6],[3,7],[5,0],[1,3],[4,1],[2,6]],"+
-						"[[5,3],[0,4],[3,4],[2,5],[4,2],[6,5],[3,2],[7,1]],"+
-						"[[0,2],[1,7],[2,1],[5,4],[7,0],[6,2],[4,7],[3,1]],"+
-						"[[6,1],[2,3],[4,0],[0,3],[7,5],[1,2],[7,6],[5,1]],"+
-						"[[0,7],[4,5],[3,5],[7,2],[5,6],[1,4],[6,3],[2,7]],"+
-						"[[3,0],[1,6],[5,7],[7,3],[4,3],[0,5],[6,7],[2,4]],"+
-						"[[5,2],[0,1],[6,4],[2,0],[4,6],[3,6],[1,0],[7,3]]"+
-					"]");
+	"[[6,0],[7,4],[0,6],[3,7],[5,0],[1,3],[4,1],[2,6]],"+
+	"[[5,3],[0,4],[3,4],[2,5],[4,2],[6,5],[3,2],[7,1]],"+
+	"[[0,2],[1,7],[2,1],[5,4],[7,0],[6,2],[4,7],[3,1]],"+
+	"[[6,1],[2,3],[4,0],[0,3],[7,5],[1,2],[7,6],[5,1]],"+
+	"[[0,7],[4,5],[3,5],[7,2],[5,6],[1,4],[6,3],[2,7]],"+
+	"[[3,0],[1,6],[5,7],[7,3],[4,3],[0,5],[6,7],[2,4]],"+
+	"[[5,2],[0,1],[6,4],[2,0],[4,6],[3,6],[1,0],[7,3]]"+
+	"]");
 
 results = JSON.parse("["+
-						"[[1,0],[1,0],[1,0],[1,0],[1,0],[0,1],[0,1],[1,0]],"+
-                    	"[[1,0],[1,0],[1,0],[1,0],[0,1],[0,1],[1,0],[1,0]]"+
-					"]");
+	"[[1,0],[1,0],[1,0],[1,0],[1,0],[0,1],[0,1],[1,0]],"+
+	"[[1,0],[1,0],[1,0],[1,0],[0,1],[0,1],[1,0],[1,0]]"+
+	"]");
 
 /**
 * Randomize array element order in-place.
@@ -52,6 +52,29 @@ function counter(arr) {
 	}
 
 	return [a, b];
+}
+
+// This function creates a new anchor element and uses location
+// properties (inherent) to get the desired URL data. Some String
+// operations are used (to normalize results across browsers).
+
+function parseURL(url) {
+	var a =  document.createElement('a');
+	a.href = url;
+	return {
+		source: url,
+		params: (function(){
+			var ret = {},
+			seg = a.search.replace(/^\?/,'').split('&'),
+			len = seg.length, i = 0, s;
+			for (;i<len;i++) {
+				if (!seg[i]) { continue; }
+				s = seg[i].split('=');
+				ret[s[0]] = s[1];
+			}
+			return ret;
+		})()
+	};
 }
 
 if(weeks.length <= 0) {
@@ -112,6 +135,8 @@ var save_tmp = JSON.stringify(weeks);
 
 function build_schedule(weeks){
 
+	$('#bracket h3').text('Current Week: Week '+current_week);
+	
 	$('#bracket .week div').not('.header').remove();
 
 	for(var i=0; i < weeks.length; i++) {
@@ -122,13 +147,13 @@ function build_schedule(weeks){
 
 			if(i < results.length) {
 				if( results[i][k][0] === 1 ) winners = [' winner',' loser'];
-        		else if( results[i][k][0] === 0 ) winners = [' loser',' winner'];
+				else if( results[i][k][0] === 0 ) winners = [' loser',' winner'];
 			}
 
 			$('#week-'+(i+1)).append('<div class="match">'+
-				'<span id="'+weeks[i][k][0]+'" class="team team_'+weeks[i][k][0]+' left'+winners[0]+'">'+teams[weeks[i][k][0]]+'</span>'+
-				'<span id="'+weeks[i][k][1]+'" class="team team_'+weeks[i][k][1]+' right'+winners[1]+'">'+teams[weeks[i][k][1]]+'</span>'+
-				'</div>');
+										'<span id="'+weeks[i][k][0]+'" class="team team_'+weeks[i][k][0]+' left'+winners[0]+'">'+teams[weeks[i][k][0]]+'</span>'+
+										'<span id="'+weeks[i][k][1]+'" class="team team_'+weeks[i][k][1]+' right'+winners[1]+'">'+teams[weeks[i][k][1]]+'</span>'+
+									'</div>');
 
 		}
 
@@ -175,11 +200,11 @@ function build_results_table(weeks, results, teams) {
 				false -> is x greater than y? 
 					true -> sort below; 
 					false -> sort same
-			*/
-		}
+					*/
+				}
 
-	return a[1] < b[1];
-	});
+				return a[1] < b[1];
+			});
 
 	console.log(team_win_loss);
 
@@ -217,6 +242,7 @@ function unhighlight(id) {
 }
 
 $(window).resize(function(){
+	$('#menu').css('height', 'auto');
 	if($(window).height() >= $(document).height()) $('#menu').css('height', $(window).height());
 	else $('#menu').css('height', $(document).height());
 });
@@ -257,4 +283,34 @@ $('#highlighters a').click(function(event){
 		$(this).addClass('pure-menu-selected');
 		is_highlighted = $(this).attr('id');
 	}
+});
+
+if( uri.params.week ){ 
+	$('#bracket .current-week').removeClass('show').addClass('hide');
+	if( parseInt(uri.params.week, 10) === current_week ) $('#bracket h3').text('Current Week: Week '+current_week);
+	else $('#bracket h3').text('Week '+uri.params.week);
+	$('#bracket .pure-button-active').removeClass('pure-button-active');
+	$('#week-pages a[href="?week='+uri.params.week+'"]').addClass('pure-button-active');
+	$('#bracket #week-'+uri.params.week).removeClass('hide').addClass('show');
+}
+
+$('#week-pages a[href="#"]').click(function(event) {
+	event.preventDefault();
+
+	var viewing_week = $('#week-pages .pure-button-active').text(), 
+		temp = location.href, 
+		current = (temp.indexOf('?') !== -1) ? temp.substr(0,temp.indexOf('?')) : temp, 
+		week = parseInt($('#week-pages .pure-button-active').text(), 10); 
+	
+	if ( $(this).hasClass('prev') ) {
+		if ( week === 1 ) return false;
+		else week--;
+	}
+	if ( $(this).hasClass('next') ){ 
+		if ( week === 7 ) return false;
+		else week++; 
+	}
+	
+	var new_url = current+'?week='+week;
+	location.href = new_url;
 });

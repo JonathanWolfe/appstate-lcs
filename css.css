@@ -142,6 +142,7 @@ body .color_7 {
 }
 
 #bracket .hide {display: none;}
+#bracket .show {display: block;}
 
 #bracket .header {
 	background: #e0e0e0;
@@ -203,6 +204,8 @@ body .color_7 {
 	border-left: 1px solid #c49246;
 }
 #bracket .winner + .right {border-left: none;}
+
+#week-pages {margin-top: 20px;}
 
 #standings {}
 
