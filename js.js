@@ -1,5 +1,5 @@
 // Declare all global variables
-var possibles = [], weeks = [], results = [], teams = ["Orbital War Brigade", "Mom Told Me to Pause", "Naming is Harder than Gaming", "Tears Fully Stacked", "Cereal Killers", "Poptarts and Koreans", "Mayonnaise Wagon", "The Donger Squad"], uri = parseURL(location.href), current_week = 3, is_highlighted = false; 
+var possibles = [], weeks = [], results = [], teams = ["Orbital War Brigade", "Mom Told Me to Pause", "Naming is Harder than Gaming", "Tears Fully Stacked", "Cereal Killers", "Poptarts and Koreans", "Mayonnaise Wagon", "The Donger Squad"], uri = parseURL(location.href), current_week = 4, is_highlighted = false; 
 
 // console.log(uri.params);
 
