@@ -1,5 +1,5 @@
 // Declare all global variables
-var possibles = [], weeks = [], results = [], teams = ["Orbital War Brigade", "Mom Told Me to Pause", "Naming is Harder than Gaming", "Tears Fully Stacked", "Cereal Killers", "Poptarts and Koreans", "Mayonnaise Wagon", "The Donger Squad"], uri = parseURL(location.href), current_week = 4, is_highlighted = false; 
+var possibles = [], weeks = [], results = [], teams = ["Orbital War Brigade", "Mom Told Me to Pause", "Naming is Harder than Gaming", "Tears Fully Stacked", "Cereal Killers", "Poptarts and Koreans", "Mayonnaise Wagon", "The Donger Squad"], uri = parseURL(location.href), current_week = 5, is_highlighted = false; 
 
 // console.log(uri.params);
 
@@ -19,7 +19,8 @@ results = JSON.parse("["+
 						"[[1,0],[1,0],[1,0],[1,0],[1,0],[0,1],[0,1],[1,0]],"+
 						"[[1,0],[1,0],[1,0],[1,0],[0,1],[0,1],[1,0],[1,0]],"+
 						"[[0,1],[1,0],[0,1],[1,0],[0,1],[0,1],[1,0],[1,0]],"+
-						"[[0,1],[0,1],[0,1],[0,1],[0,1],[0,1],[0,1],[1,0]]"+
+						"[[0,1],[0,1],[0,1],[0,1],[0,1],[0,1],[0,1],[1,0]],"+
+						"[[1,0],[2,2],[2,2],[0,1],[2,2],[2,2],[2,2],[1,0]]"+
 					"]");
 
 /**
@@ -189,6 +190,9 @@ function build_schedule(weeks, current_week, results){
 		}
 
 	}
+	
+	$('#bracket #week-'+current_week).addClass('current-week show');
+	$('#week-pages a[href="?week='+current_week+'"]').addClass('pure-button-active');
 
 }
 
