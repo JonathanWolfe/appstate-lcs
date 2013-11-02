@@ -60,7 +60,7 @@ body .color_7 {
 }
 
 
-#open-close, #bracket *, #standings * {
+#menu-open-close, #bracket *, #standings * {
 	-webkit-transition: all .1s ease-in-out;
 	transition: all .1s ease-in-out;
 }
@@ -69,7 +69,7 @@ body .color_7 {
 	background: #191818;
 }
 
-#open-close {
+#menu-open-close {
 	height: 30px;
 	position: relative;
 	padding-left: 1.25em;
@@ -78,7 +78,7 @@ body .color_7 {
 	margin: 7px;
 }
 
-#open-close:before {
+#menu-open-close:before {
 	content: "";
 	position: absolute;
 	top: 0.25em;
@@ -89,7 +89,7 @@ body .color_7 {
 	border-bottom: 0.125em solid #eee;
 }
 
-#open-close:hover {
+#menu-open-close:hover {
 	-ms-transform: rotate(90deg);
 	-webkit-transform: rotate(90deg);
 	transform: rotate(90deg);
@@ -99,14 +99,14 @@ body .color_7 {
 	width: 45px; 
 }
 
-#menu.opened #open-close {
+#menu.opened #menu-open-close {
 	top: 0.125em;
 	-ms-transform: rotate(90deg);
 	-webkit-transform: rotate(90deg);
 	transform: rotate(90deg);
 }
 
-#menu.opened #open-close:hover {
+#menu.opened #menu-open-close:hover {
 	-ms-transform: rotate(0deg);
 	-webkit-transform: rotate(0deg);
 	transform: rotate(0deg);
@@ -196,11 +196,19 @@ body .color_7 {
 #bracket .right {border-left: 1px solid rgb(196,146,70);}
 
 #bracket .winner.left {
-	background-image: radial-gradient(90% 90% at center right, hsla(47, 94%, 50%, 0.4) 0%,hsla(47, 94%, 50%, 0) 100%); 
+	background-image: radial-gradient(
+		90% 90% at center right, 
+		hsla(47, 94%, 50%, 0.4) 0%, 
+		hsla(47, 94%, 50%, 0) 100%
+		); 
 	border-right: 1px solid #c49246;
 }
 #bracket .winner.right {
-	background-image: radial-gradient(90% 90% at center left, hsla(47, 94%, 50%, 0.4) 0%,hsla(47, 94%, 50%, 0) 100%); 
+	background-image: radial-gradient(
+		90% 90% at center left, 
+		hsla(47, 94%, 50%, 0.4) 0%, 
+		hsla(47, 94%, 50%, 0) 100%
+		); 
 	border-left: 1px solid #c49246;
 }
 #bracket .winner + .right {border-left: none;}
@@ -209,4 +217,25 @@ body .color_7 {
 
 #standings {}
 
-#standings table {margin: 75px 20px;}
+#standings #main-table {margin: 75px 20px;}
+
+#standings .hide {display: none;}
+#standings .show {display: table-row;}
+
+#standings .standings-open-close {cursor: pointer;}
+
+#standings .results-expanded {
+	background: #444; 
+	color: #fff;
+}
+
+#standings .results-expanded > td {padding: 0 0 0 38px;}
+
+#standings .results-expanded table {
+	width: 100%;
+	border: none;
+}
+
+#standings .results-expanded .tie {background: goldenrod;}
+#standings .results-expanded .win {background: green;}
+#standings .results-expanded .loss {background: red;}
