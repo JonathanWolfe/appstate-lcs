@@ -300,7 +300,7 @@ function build_results_table(weeks, results, teams, teams_shortened) {
 										'<td>1</td>'+
 									'</tr>';
 			}
-			else if (l >= count[1][0].length) {
+			else if (l >= count[1][0].length && count[1][0].indexOf(count[2][0][l - count[1][0].length]) === -1) {
 				
 				expand_insert[l] = '<tr class="loss">'+
 										'<td>vs.</td>'+
