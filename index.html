@@ -6,7 +6,6 @@
 	<meta name="description" content="App State LCS -- 2.5.2" />
 
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-	<script src="jquery.raptorize.1.0.js"></script>
 
 	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.3.0/pure-min.css">
 	<link rel="stylesheet" href="css.css">
@@ -97,19 +96,5 @@
 	<a href='#' title= 'Clever Girl' id='clever-girl' style='display: none'>Clever Girl</a>
 
 	<script src='js.js'></script>
-	<script type="text/javascript">
-		function get_IP() {
-		    if (window.XMLHttpRequest) xmlhttp = new XMLHttpRequest();
-		    else xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-
-		    xmlhttp.open("GET","http://api.hostip.info/get_json.php",false);
-		    xmlhttp.send();
-
-		    return JSON.parse(xmlhttp.responseText);
-		}
-		var for_alex = get_IP();
-		if(for_alex.ip === '66.190.153.2') $('#clever-girl').raptorize({ 'enterOn' : 'timer', 'delayTime' : 1500});
-		else $('#clever-girl').raptorize();
-	</script>
 </body>
 </html>
