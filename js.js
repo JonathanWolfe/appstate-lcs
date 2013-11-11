@@ -23,7 +23,7 @@ var possibles = [],
         "The Donger Squad"
     ],
     uri = parseURL(location.href),
-    current_week = 5,
+    current_week = 6,
     is_highlighted = false;
 
 // console.log(uri.params);
@@ -39,13 +39,14 @@ weeks = JSON.parse("[" +
         "[[5,2],[0,1],[6,4],[2,0],[4,6],[3,6],[1,0],[7,3]]" +
     "]");
 
-// Results data; 1 = winner, 0 = loser; JSON format
+// Results data; 1 = winner, 0 = loser, 2 = not played; JSON format
 results = JSON.parse("[" +
         "[[1,0],[1,0],[1,0],[1,0],[1,0],[0,1],[0,1],[1,0]]," +
         "[[1,0],[1,0],[1,0],[1,0],[0,1],[0,1],[1,0],[1,0]]," +
         "[[0,1],[1,0],[0,1],[1,0],[0,1],[0,1],[1,0],[1,0]]," +
         "[[0,1],[0,1],[0,1],[0,1],[0,1],[0,1],[0,1],[1,0]]," +
-        "[[1,0],[1,0],[1,0],[0,1],[1,0],[0,1],[0,1],[1,0]]" +
+        "[[1,0],[1,0],[1,0],[0,1],[1,0],[0,1],[0,1],[1,0]]," +
+        "[[2,2],[1,0],[1,0],[0,1],[2,2],[2,2],[1,0],[2,2]]" +
 	"]");
 
 /**
@@ -452,9 +453,9 @@ $('#week-pages a[href="#"]').click(function(event) {
 	event.preventDefault();
 	
 	var viewing_week = $('#week-pages .pure-button-active').text(), 
-	temp = location.href, 
-	current = (temp.indexOf('?') !== -1) ? temp.substr(0,temp.indexOf('?')) : temp, 
-	week = parseInt($('#week-pages .pure-button-active').text(), 10); 
+		temp = location.href, 
+		current = (temp.indexOf('?') !== -1) ? temp.substr(0,temp.indexOf('?')) : temp, 
+		week = parseInt($('#week-pages .pure-button-active').text(), 10); 
 	
 	if ( $(this).hasClass('prev') ) {
 		if ( week === 1 ) return false;
