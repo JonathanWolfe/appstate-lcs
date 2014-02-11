@@ -1,0 +1,51 @@
+body * {
+	text-shadow: 0 1px 1px rgba(0,0,0,0.2);
+}
+
+/* Colors: 
+#1a1334    #26294a    #01545a    #017351    #03c383    #aad962    
+#fbbf45    #ef6a32    #ed0345    #a12a5e    #710162    #110141 */
+
+.color_0 {background-color: #ed0345;}
+.color_0_text {color: #ed0345;}
+.color_1 {background-color: #fbbf45; color: #333;}
+.color_1_text {color: #fbbf45;}
+.color_2 {background-color: #aad962; color: #333;}
+.color_2_text {color: #aad962;}
+.color_3 {background-color: #01545a;}
+.color_3_text {color: #01545a;}
+.color_4 {background-color: #26294a;}
+.color_4_text {color: #26294a;}
+.color_5 {background-color: #017351;}
+.color_5_text {color: #017351;}
+.color_6 {background-color: #ed7282;}
+.color_6_text {color: #ed7282;}
+.color_7 {background-color: #710162;}
+.color_7_text {color: #710162;}
+.color_0, .color_3, .color_4, .color_5, .color-6, .color_7 {color: #eee;}
+.color_0, .color_0_text, .color_1, .color_1_text, .color_2, .color_2_text, .color_3, .color_3_text, .color_4, .color_4_text, .color_5, .color_5_text, .color_6, .color_6_text, .color_7, .color_7_text {font-style: italic; font-weight: 700;}
+
+.league {
+	text-align: center;
+}
+
+.holder {
+	background: #ddd;
+	padding: 15px;
+	border-right: 3px solid #aaa;
+}
+
+#match-1 {
+	border-bottom: 2px solid #ccc;
+}
+
+.standings th {
+	text-align: center;
+}
+.standings th:nth-of-type(2), .pure-table td:nth-of-type(2) {text-align: left;}
+
+.expanded-standings table {color: #eee;}
+
+.expanded-standings .tie {background: goldenrod; color: #111;}
+.expanded-standings .win {background: green;}
+.expanded-standings .loss {background: red;}
