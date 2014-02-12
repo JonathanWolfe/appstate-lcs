@@ -1,9 +1,19 @@
+body, .pure-g [class *= "pure-u"], .pure-g-r [class *= "pure-u"] {
+	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif
+}
+
 body * {
 	text-shadow: 0 1px 1px rgba(0,0,0,0.2);
 }
 
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+	font-weight: 300;
+	line-height: 1.1;
+	color: inherit;
+}
+
 /* Colors: 
-#1a1334    #26294a    #01545a    #017351    #03c383    #aad962    
+#1a1334    #26294a    #01545a    #1f8dd6    #03c383    #aad962    
 #fbbf45    #ef6a32    #ed0345    #a12a5e    #710162    #110141 */
 
 .color_0 {background-color: #ed0345;}
@@ -16,8 +26,8 @@ body * {
 .color_3_text {color: #01545a;}
 .color_4 {background-color: #26294a;}
 .color_4_text {color: #26294a;}
-.color_5 {background-color: #017351;}
-.color_5_text {color: #017351;}
+.color_5 {background-color:#1f8dd6;}
+.color_5_text {color: #1f8dd6;}
 .color_6 {background-color: #ed7282;}
 .color_6_text {color: #ed7282;}
 .color_7 {background-color: #710162;}
@@ -25,18 +35,47 @@ body * {
 .color_0, .color_3, .color_4, .color_5, .color-6, .color_7 {color: #eee;}
 .color_0, .color_0_text, .color_1, .color_1_text, .color_2, .color_2_text, .color_3, .color_3_text, .color_4, .color_4_text, .color_5, .color_5_text, .color_6, .color_6_text, .color_7, .color_7_text {font-style: italic; font-weight: 700;}
 
+#header {
+	font-size: 2em;
+	font-weight: normal;
+	padding: 2% 0 0 5%;
+}
+#header h1 {
+	padding: 0; margin: 0;
+}
+#header p {
+	padding: 0; margin: 0;
+	color: #999;
+	font-style: italic;
+}
+
+.twitch {
+	display: block;
+	float: right;
+	padding-right: 4%;
+	height: 3em;
+	line-height: 3em;
+	text-indent: 95px;
+	background: url(http://s.jtvnw.net/jtv_user_pictures/hosted_images/GlitchIcon_purple.png) top left no-repeat;
+	background-size: contain;
+	text-decoration: none;
+}
+
 .league {
 	text-align: center;
 }
-
-.holder {
-	background: #ddd;
-	padding: 15px;
-	border-right: 3px solid #aaa;
+.league h1 {
+	font-size: 3em;
+	padding-bottom: 9.5px;
+	margin: 42px 0 21px;
+	border-bottom: 1px solid #dddddd;
 }
 
-#match-1 {
-	border-bottom: 2px solid #ccc;
+.holder {
+	background: #f5f5f5;
+	padding: 15px;
+	border: 1px solid #dddddd;
+	border-radius: 1px;
 }
 
 .standings th {
@@ -44,8 +83,10 @@ body * {
 }
 .standings th:nth-of-type(2), .pure-table td:nth-of-type(2) {text-align: left;}
 
+.expanded-standings h4 span {text-decoration: underline;}
+
 .expanded-standings table {color: #eee;}
 
-.expanded-standings .tie {background: goldenrod; color: #111;}
-.expanded-standings .win {background: green;}
-.expanded-standings .loss {background: red;}
+.expanded-standings .tie {background: #e99002; border-color: ##d08002; color: #000;}
+.expanded-standings .win {background-color: #1c8945; border-color: #3c9a5f;}
+.expanded-standings .loss {background-color: #f04124; border-color: #ea2f10;}
