@@ -6,6 +6,8 @@ body * {
 	text-shadow: 0 1px 1px rgba(0,0,0,0.2);
 }
 
+.hide {display: none;}
+
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 	font-weight: 300;
 	line-height: 1.1;
@@ -16,24 +18,25 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 #1a1334    #26294a    #01545a    #1f8dd6    #03c383    #aad962    
 #fbbf45    #ef6a32    #ed0345    #a12a5e    #710162    #110141 */
 
-.color_0 {background-color: #ed0345;}
-.color_0_text {color: #ed0345;}
-.color_1 {background-color: #fbbf45; color: #333;}
-.color_1_text {color: #fbbf45;}
-.color_2 {background-color: #aad962; color: #333;}
-.color_2_text {color: #aad962;}
-.color_3 {background-color: #01545a;}
-.color_3_text {color: #01545a;}
-.color_4 {background-color: #26294a;}
-.color_4_text {color: #26294a;}
-.color_5 {background-color:#1f8dd6;}
-.color_5_text {color: #1f8dd6;}
-.color_6 {background-color: #ed7282;}
-.color_6_text {color: #ed7282;}
-.color_7 {background-color: #710162;}
-.color_7_text {color: #710162;}
-.color_0, .color_3, .color_4, .color_5, .color-6, .color_7 {color: #eee;}
-.color_0, .color_0_text, .color_1, .color_1_text, .color_2, .color_2_text, .color_3, .color_3_text, .color_4, .color_4_text, .color_5, .color_5_text, .color_6, .color_6_text, .color_7, .color_7_text {font-style: italic; font-weight: 700;}
+#league-1 .color_0 {background-color: #ed0345; color: #eee;}
+#league-1 .color_0_text {color: #ed0345;}
+#league-1 .color_1 {background-color: #fbbf45; color: #333;}
+#league-1 .color_1_text {color: #fbbf45;}
+#league-1 .color_2 {background-color: #aad962; color: #333;}
+#league-1 .color_2_text {color: #aad962;}
+#league-1 .color_3 {background-color: #01545a; color: #eee;}
+#league-1 .color_3_text {color: #01545a;}
+
+#league-2 .color_0 {background-color: #26294a; color: #eee;}
+#league-2 .color_0_text {color: #26294a;}
+#league-2 .color_1 {background-color:#1f8dd6; color: #eee;}
+#league-2 .color_1_text {color: #1f8dd6;}
+#league-2 .color_2 {background-color: #ed7282;}
+#league-2 .color_2_text {color: #ed7282;}
+#league-2 .color_3 {background-color: #710162; color: #eee;}
+#league-2 .color_3_text {color: #710162;}
+
+.color_0, .color_0_text, .color_1, .color_1_text, .color_2, .color_2_text, .color_3, .color_3_text {font-style: italic; font-weight: 700;}
 
 #header {
 	font-size: 2em;
@@ -49,6 +52,8 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 	font-style: italic;
 }
 
+#header p span {font-size: .6em}
+
 .twitch {
 	display: block;
 	float: right;
@@ -59,11 +64,16 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 	background: url(http://s.jtvnw.net/jtv_user_pictures/hosted_images/GlitchIcon_purple.png) top left no-repeat;
 	background-size: contain;
 	text-decoration: none;
+	color: #6441A5;
+}
+.twitch:hover {
+	text-decoration: underline;
 }
 
 .league {
 	text-align: center;
 }
+
 .league h1 {
 	font-size: 3em;
 	padding-bottom: 9.5px;
@@ -83,10 +93,12 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 .standings th:nth-of-type(2), .pure-table td:nth-of-type(2) {text-align: left;}
 
+.standings-open-close:hover {cursor: pointer;}
+
 .expanded-standings h4 span {text-decoration: underline;}
 
-.expanded-standings table {color: #eee;}
+.expanded-standings table {color: #eee; margin-top: -3px;}
 
 .expanded-standings .tie {background: #e99002; border-color: ##d08002; color: #000;}
 .expanded-standings .win {background-color: #1c8945; border-color: #3c9a5f;}
-.expanded-standings .loss {background-color: #f04124; border-color: #ea2f10;}
+.expanded-standings .loss {background-color: #c92a10; border-color: #ea2f10;}

@@ -1,47 +1,126 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-	<meta charset=utf-8 />
-	<title>App State LCS </title>
-	<meta name="description" content="App State LCS - v2.8" />
-	
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Home of the App State LCS standings, info, and more.">
 
-	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.3.0/pure-min.css">
-	<link rel="stylesheet" href="css.css">
+	<title>App State LCS &ndash; Season 2</title>
+	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.4.1/pure.css">
+	<link rel="stylesheet" href="css/new.css">
 </head>
-
 <body>
-	<div class='pure-g-r'>
 
-		<aside id='menu' class='pure-u closed'>
-			<a href='#' id='menu-open-close'></a>
-
-			<section id='wrapper' class='pure-menu'>
-			</section>
-		</aside>
-
-		<section id='bracket' class='pure-u'>
-		</section>
-
-		<aside id='standings' class='pure-u'>
-			<table id='main-table' class='pure-table pure-table-horizontal'>
+<div id="#wrapper" class="pure-g-r">
+	
+	<section id="header" class="pure-u-1">
+		<div class="pure-g-r">
+			<div class="pure-u-2-3">
+				<h1>App State LCS</h1>
+				<p>Season 2 <span>&ndash; <a href="http://asuesports.proboards.com/post/2/thread">Rules</a></span></p>
+			</div>
+			
+			<div class="pure-u-1-3">
+				<a href="http://twitch.tv/asu_esports" title="Watch us on Twitch" class="twitch">ASU_Esports</a>
+			</div>
+		</div>
+	</section>
+	
+	<section id="league-1" class="league pure-u-1-2">
+		
+		<h1 class="pure-u-1">Golemns League</h1>
+		<h4 class="pure-u-1">Games for <strong>Sunday - 2/16</strong></h4>
+		<div id="match-1" class="holder pure-g-r">
+			
+		</div>
+		<div id="match-2" class="holder pure-g-r">
+			
+		</div>
+		
+		<section id="standings-1" class="standings pure-u">
+			<h3>Current League Standings</h3>
+			<table class='pure-table pure-table-horizontal'>
 				<thead>
 					<tr>
-						<th>#</th>
+						<th>Position</th>
 						<th>Team</th>
 						<th>W</th>
 						<th>L</th>
+						<th>Points</th>
 					</tr>
 				</thead>
 
 				<tbody>
+	
 				</tbody>
 			</table>
-		</aside>
+		</section>
+		
+		<section id="expanded-standings-1" class="expanded-standings pure-u hide">
+			<h4>Match Results for: &nbsp; <span class=""></span></span></h4>
+			<table class="pure-table pure-table-horizontal">
+				<thead>
+					<tr>
+						<th>vs.</th>
+						<th>Team</th>
+						<th>W</th>
+						<th>L</th>
+						<th>Points</th>
+					</tr>
+				</thead>
+			</table>
+		</section>
+	</section>
+	<section id="league-2" class="league pure-u-1-2">
+	
+		<h1 class="pure-u-1">Lizards League</h1>
+		<h4 class="pure-u-1">Games for <strong>Wednesday - 2/19</strong></h4>
+		<div id="match-1" class="holder pure-g-r">
+			
+		</div>
+		<div id="match-2" class="holder pure-g-r">
+			
+		</div>
+		
+		<section id="standings-2" class="standings pure-u">
+			<h3>Current League Standings</h3>
+			<table class='pure-table pure-table-horizontal'>
+				<thead>
+					<tr>
+						<th>Position</th>
+						<th>Team</th>
+						<th>W</th>
+						<th>L</th>
+						<th>Points</th>
+					</tr>
+				</thead>
 
-	</div>
+				<tbody>
 
-	<script src="js/js.js" type="text/javascript" charset="utf-8" async defer></script>
+				</tbody>
+			</table>
+		</section>
+		
+		<section id="expanded-standings-2" class="expanded-standings pure-u hide">
+			<h4>Match Results for: &nbsp; <span class=""></span></h4>
+			<table class="pure-table pure-table-horizontal">
+				<thead>
+					<tr>
+						<th>vs.</th>
+						<th>Team</th>
+						<th>W</th>
+						<th>L</th>
+						<th>Points</th>
+					</tr>
+				</thead>
+			</table>
+		</section>
+	</section>
+	
+</div>
+
+<!-- scripts -->
+<script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+<script src="js/new-js.js"></script>
 </body>
 </html>
