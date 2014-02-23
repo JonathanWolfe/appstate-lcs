@@ -14,12 +14,12 @@ var num_weeks = 3,
 	],
     results = [
 		[
-			[[0, 0], [0, 0]],
+			[[2, 0], [2, 0]],
 			[[0, 0], [0, 0]],
 			[[0, 0], [0, 0]]
 		],
 		[
-			[[0, 0], [0, 0]],
+			[[0, 2], [2, 0]],
 			[[0, 0], [0, 0]],
 			[[0, 0], [0, 0]]
 		]
@@ -42,19 +42,19 @@ var num_weeks = 3,
 		[
 			[
 				"Orbital War Brigade",
-				"Bronx Village",
+				"Rad Coolio",
 				"Mom's Spaghetti",
 				"Team Horse Tornado"
 			],
 			[
 				"ORB",
-				"BRONX",
+				"COOL",
 				"SPAGH",
 				"THT"
 			]
 		]
 	],
-	current_week = 1;
+	current_week = 2;
 
 
 
@@ -268,7 +268,7 @@ function build_results_table(weeks, results, teams) {
 					// add win to first team
 					team_win_loss[league][blue_team][1].push(purple_team);
 					team_win_loss[league][blue_team][1].push(copy);
-					team_win_loss[league][blue_team][3] += 2;
+					team_win_loss[league][blue_team][3] += 3;
 
 					copy = blue_team;
 					// add loss to second team
@@ -282,7 +282,7 @@ function build_results_table(weeks, results, teams) {
 					// add win to second team
 					team_win_loss[league][purple_team][1].push(blue_team);
 					team_win_loss[league][purple_team][1].push(copy);
-					team_win_loss[league][purple_team][3]+= 2;
+					team_win_loss[league][purple_team][3]+= 3;
 
 					copy = purple_team;
 					// add loss to first team
@@ -342,7 +342,7 @@ function build_results_table(weeks, results, teams) {
 				temp_wins = count[1][1][l];
 				temp_loss = index_find === -1 ? 0 : count[2][1][index_find];
 				temp_team = count[1][0][l];
-				if (temp_wins === 2) temp_points = '+2';
+				if (temp_wins === 2) temp_points = '+3';
 				else if (temp_wins === 1) temp_points = '+1';
 				else if (temp_wins === 0) temp_points = '+0';
 				else temp_points = '+?';
@@ -368,7 +368,7 @@ function build_results_table(weeks, results, teams) {
 				temp_wins = 0;
 				temp_loss = count[2][1][n];
 				temp_team = count[2][0][n];
-				if (temp_wins === 2) temp_points = '+2';
+				if (temp_wins === 2) temp_points = '+3';
 				else if (temp_wins === 1) temp_points = '+1';
 				else if (temp_wins === 0) temp_points = '+0';
 				else temp_points = '+?';
