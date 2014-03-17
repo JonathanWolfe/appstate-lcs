@@ -1,63 +1,3 @@
-// Declare all global variables
-var num_weeks = 3,
-    weeks = [
-		[
-			[[3, 2], [0, 1]],
-			[[2, 0], [1, 3]],
-			[[2, 1], [0, 3]]
-		],
-		[
-			[[3, 0], [2, 1]],
-			[[3, 2], [0, 1]],
-			[[0, 2], [1, 3]]
-		]
-	],
-    results = [
-		[
-			[[2, 0], [2, 0]],
-			[[0, 2], [0, 2]],
-			[[1, 1], [2, 0]]
-		],
-		[
-			[[0, 2], [2, 0]],
-			[[0, 2], [2, 0]],
-			[[0, 0], [0, 0]]
-		]
-	],
-    teams = [
-		[
-			[
-				"Ditch Six",
-				"Team Riven Mid",
-				"Force Tornado",
-				"Rageholics Anonymous"
-			],
-			[
-				"D6TCH",
-				"RIVEN",
-				"FORCE",
-				"RAGE"
-			]
-		],
-		[
-			[
-				"Orbital War Brigade",
-				"Rad Coolio",
-				"Mom's Spaghetti",
-				"Team Horse Tornado"
-			],
-			[
-				"ORB",
-				"COOL",
-				"SPAGH",
-				"THT"
-			]
-		]
-	],
-	current_week = 3;
-
-
-
 /**
 * Randomize array element order in-place.
 * Using Fisher-Yates shuffle algorithm.
@@ -355,7 +295,7 @@ function build_results_table(weeks, results, teams) {
 				else if (temp_wins < temp_loss) result_class = 'loss';
 
 				expand_insert[l] = '<tr class="'+result_class+'">'+
-										'<td></td>'+
+										'<td>vs.</td>'+
 										'<td>'+teams[index][0][temp_team]+'</td>'+
 										'<td>'+temp_wins+'</td>'+
 										'<td>'+temp_loss+'</td>'+
